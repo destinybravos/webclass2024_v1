@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body{
+    background-color: rgb(242, 240, 251);
+    height: 100vw;
+}
+
+/* Brand Styles */
+header i.fas, header i.fa, header i.far, header i.fal{
+    color: white;
+}
+
+#brandDiv{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
+    color: white;
+}
+
+#brandDiv button{
+    display: inline-block;
+    padding: 3px 5px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+#brandDiv button i.fas{
+    font-size: 1.2rem;
+}
+#brandDiv div{
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+#brandDiv span{
+    color: orange;
+}
+
+/* Menu Styles */
+#menuAside{
+    padding: 5px 7px;
+    display: none;
+}
+#menuAside ul{
+    background-color: #ffffffb1;
+    padding: 5px 7px;
+}
+#menuAside ul li{
+    list-style-type: none;
+}
+#menuAside a{
+   text-decoration: none;
+   color: #3a0036;
+   display: block;
+   padding: 5px;
+}
+
+/* Mobile Responsive Design */
+@media screen and (min-width: 767px) {
+    #brandDiv button{
+        display: none;
+    }
+
+    #menuAside{
+        display: block;
+    }
+
+    header section{
+        display: flex;
+        justify-content: space-between;
+        max-width: 1100px;
+        margin: auto;
+        align-items: center;
+    }
+    #menuAside a{
+        color: white;
+        padding: 5px 10px;
+    }
+    #menuAside ul li{
+        display: inline-block;
+    }
+    #menuAside ul{
+        background-color: transparent;
+    }
+
+    #menuAside ul li:last-child{
+        background-color: #ffffff65;
+        color: #3a0036;
+        border-radius: 5px;
+        margin-left: 15px;
+    }
+}
