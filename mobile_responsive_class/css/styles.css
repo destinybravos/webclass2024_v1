@@ -6,7 +6,6 @@
 
 body{
     background-color: rgb(242, 240, 251);
-    height: 100vw;
 }
 
 /* Brand Styles */
@@ -91,5 +90,73 @@ header i.fas, header i.fa, header i.far, header i.fal{
         color: #3a0036;
         border-radius: 5px;
         margin-left: 15px;
+    }
+}
+
+
+/* Banner Styles */
+#banner{
+    /* min-height: 80vh; */
+    display: flex;
+    max-width: 1100px;
+    margin: auto;
+    align-items: center;
+}
+
+#banner aside{
+    width: 50%;
+}
+
+#banner aside:last-child h1{
+    font-size: 4rem;
+    font-weight: bold;
+    color: white;
+    line-height: 3.5rem;
+    margin-bottom: 20px;
+}
+
+#banner aside:last-child p{
+    color: rgba(255, 255, 255, 0.626);
+    margin-bottom: 30px;
+    max-width: 400px;
+}
+
+#banner aside:last-child button{
+    padding: 8px 20px;
+    font-weight: 500;
+    color: white;
+    border-radius: 7px;
+}
+
+#banner aside:last-child button:first-child{
+    background-color: green;
+    margin-right: 10px;
+    border: none;
+}
+#banner aside:last-child button:last-child{
+    border: 1px solid white;
+    background-color: transparent;
+}
+
+#lady_img{
+    max-height: 450px;
+}
+
+/* Media Query */
+@media screen and (max-width:767px) {
+    #banner{
+        flex-direction: column-reverse;
+        margin-top: 30px;
+        /* align-items: center; */
+    }
+    #banner aside{
+        width: 90%;
+        text-align: center;
+    }
+    #banner aside:last-child p{
+        margin:5px auto 30px;
+    }
+    #banner aside:last-child h1{
+        font-size: 3rem;
     }
 }
