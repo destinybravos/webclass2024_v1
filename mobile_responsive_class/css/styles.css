@@ -107,6 +107,77 @@ header i.fas, header i.fa, header i.far, header i.fal{
     width: 50%;
 }
 
+#banner aside:first-child{
+    position: relative;
+}
+
+#verified{
+    min-height: 100px;
+    min-width: 50px;
+    background-color: white;
+    position: absolute;
+    bottom: 10px;
+    right: 25%;
+    bottom: 60px;
+    padding: 10px 15px 20px;
+    border-radius: 50px;
+    text-align: center;
+}
+
+#verified h1{
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: rgb(31, 28, 49);
+}
+
+#verified span{
+    color: rgb(57, 57, 57);
+}
+
+.top_float_icons{
+    height: 60px;
+    width: 60px;
+    background-color: orange;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+#shield_box{
+    top: 30%;
+    right: 30%;
+    background-color: #3ba0fe;
+}
+
+#rs_box{
+    top: 5%;
+    right: 30%;
+}
+
+#singnal_box{
+    top: 15%;
+    right: 15%;
+    background-color: #a008fd;
+}
+
+#check_box{
+    position: relative;
+    background-color: transparent;
+}
+#check_box i{
+    position: absolute;
+}
+
+#check_box i:not(:nth-child(2)){
+    color: red;
+}
+#check_box i:nth-child(2){
+    color: white;
+    font-size: 2.3rem;
+}
+
 #banner aside:last-child h1{
     font-size: 4rem;
     font-weight: bold;
@@ -158,5 +229,180 @@ header i.fas, header i.fa, header i.far, header i.fal{
     }
     #banner aside:last-child h1{
         font-size: 3rem;
+    }
+
+    /* Floating Banner Contents */
+    #verified{
+        bottom: 10px;
+        right: 5%;
+    }
+
+    #shield_box{
+        top: 30%;
+        right: 70%;
+        background-color: #3ba0fe;
+    }
+    
+    #rs_box{
+        top: 5%;
+        right: 75%;
+    }
+}
+
+
+
+/* Service Summary section */
+#service{
+    background-color: #fec942;
+    min-height: 100px;
+}
+#service_summary{
+    max-width: 1100px;
+    margin: auto;
+    min-height: inherit;
+    display: flex;
+    padding-top: 30px;
+}
+#service_summary aside{
+    flex: 1;
+}
+#service_summary aside:not(:last-child){
+    border-right: 2px solid orange;
+}
+
+
+/* Our Specialty */
+#our_specialty{
+    max-width: 1100px;
+    margin: auto;
+    min-height: 100px;
+    padding: 60px 0;
+}
+
+#our_specialty aside:first-child{
+    text-align: center;
+}
+
+#our_specialty aside:first-child h1{
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+#our_specialty aside:first-child p{
+    max-width: 400px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+#card_container{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+#card_container > div{
+    flex: 1;
+    min-height: 150px;
+    background-color: #a008fd;
+}
+
+#card_container > div:hover{
+    transform: rotateY(180deg);
+    transition: all linear 5s;
+}
+#card_container > div:not(:hover){
+    transform: rotateY(0deg);
+    transition: all linear 5s;
+}
+
+
+
+/* Animate Example */
+#front_ball{
+    height: 150px;
+    width: 150px; 
+    background-color: #3a0036; 
+    border-radius: 100%; 
+    position: absolute; 
+    bottom: 10px; 
+    z-index: 2;
+    animation: bounce  2s infinite;;
+    -webkit-animation: bounce 2s infinite;
+}
+
+#shadow_ball{
+    height: 150px;
+    width: 150px; 
+    background-color: #3230329c; 
+    border-radius: 100%; 
+    position: absolute; 
+    bottom: -65px; 
+    z-index: 1;
+    box-shadow: 0 0 50px #323032;
+    transform: rotatey(80deg);
+    transform: rotatex(95deg);
+    animation: expand  2s infinite;;
+    -webkit-animation: expand 2s infinite;
+}
+
+@keyframes bounce {
+    0%{
+        bottom: 10px; 
+    }
+
+    /* 25%{
+        bottom: 50px; 
+    } */
+
+    50%{
+        bottom: 100px; 
+    }
+
+    /* 75%{
+        bottom: 50px; 
+    } */
+
+    100%{
+        bottom: 10px; 
+    }
+}
+@-webkit-keyframes  bounce {
+    0%{
+        bottom: 10px; 
+    }
+
+    /* 25%{
+        bottom: 50px; 
+    } */
+
+    50%{
+        bottom: 100px; 
+    }
+
+    /* 75%{
+        bottom: 50px; 
+    } */
+
+    100%{
+        bottom: 10px; 
+    }
+}
+
+@keyframes expand {
+    0%{
+        height: 150px;
+        width: 150px; 
+        bottom: -65px;
+    }
+    50%{
+        height: 350px;
+        width: 350px; 
+        bottom: -130px;
+    }
+    100%{
+        height: 150px;
+        width: 150px;
+        bottom: -65px;
     }
 }
