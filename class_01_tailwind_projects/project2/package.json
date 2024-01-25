@@ -1,0 +1,15 @@
+{
+  "name": "tailwind-sample",
+  "version": "1.0.0",
+  "description": "A simple tailwing website",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tailwindcss -i ./css/raw.css -o ./css/styles.css",
+    "watch": "tailwindcss -i ./css/raw.css -o ./css/styles.css --watch"
+  },
+  "author": "Destiny B",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}
