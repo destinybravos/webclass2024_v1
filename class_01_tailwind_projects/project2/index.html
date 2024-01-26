@@ -12,7 +12,7 @@
     
     
     <!-- Top Section -->
-    <section class="min-h-screen bg-gradient-to-br from-[#f6f3ee] to-[#efece3]" id="top_section">
+    <section class="lg:min-h-screen bg-gradient-to-br from-[#f6f3ee] to-[#efece3]" id="top_section">
         <header class="max-w-6xl mx-auto flex flex-col md:flex-row md:justify-between md:items-center py-2 px-4 md:px-0">
             <aside class="flex gap-2 items-center justify-between">
                 <img src="../images/logo.png" alt="logo" class="h-12" >
@@ -42,7 +42,7 @@
                         <a href="#" class="block py-2 md:py-1 px-4 text-sm font-semibold">Case Studies</a>
                     </li>
                     <li class="md:hidden">
-                        <a href="#" class="block py-2 md:py-1 px-4 text-sm font-semibold bg-white py-2 px-5 font-bold rounded-lg shadow">Sign Up</a>
+                        <a href="#" class="block py-2 md:py-1 text-sm font-semibold bg-white px-5 rounded-lg shadow">Sign Up</a>
                     </li>
                 </ul>
             </aside>
@@ -53,6 +53,112 @@
                 </a>
             </aside>
         </header>
+
+        <!-- Bannner | Hero -->
+        <div class="flex flex-col lg:flex-row gap-10 items-center max-w-6xl mx-auto lg:min-h-[90vh] py-10">
+            <!-- Left Banner Aside -->
+            <aside class="flex-grow px-4 text-center lg:text-left">
+                <div class="bg-white shadow-md rounded-md text-xs inline-block py-2 px-3 font-semibold mb-4">
+                    Your Success, Our Priority
+                </div>
+
+                <h1 class="text-4xl md:text-5xl font-semibold lg:max-w-lg md:leading-[3.5rem] mb-6">
+                    Transform Your Business, with Expert Accounting Services.
+                </h1>
+
+                <p class="lg:max-w-lg text-sm font-medium mb-8">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                    Cupiditate vitae eius nostrum tempore error,
+                </p>
+
+                <div class="gap-4 flex justify-center lg:justify-start">
+                    <button class="bg-slate-800 text-white py-2 px-4 rounded-lg">
+                        Get Started
+                    </button>
+                    <button class="text-slate-800 bg-white shadow py-2 px-4 rounded-lg">
+                        Get in Touch
+                    </button>
+                </div>
+
+            </aside>
+
+            <!-- Right Banner Aside with Image -->
+            <aside class="flex-grow text-center px-4 max-w-[80%] md:max-w-[70%] lg:max-w-[45%] relative">
+                <img src="./images/webimage.png" alt="image" class="max-w-full">
+                <div class="absolute min-h-12 w-56 bg-white shadow-md rounded-md bottom-0 -left-10 md:-left-20 md:bottom-20 py-3 px-4">
+                    <!-- Aside 1 -->
+                    <aside class="mb-3">
+                        <!-- name Section -->
+                        <section class="flex justify-between text-sm mb-2">
+                            <span class="font-semibold">
+                                Tax Consultation
+                            </span>
+                            <span class="font-extrabold">
+                                90%
+                            </span>
+                        </section>
+                        <!-- Progress indiator section -->
+                        <section>
+                            <div class="bg-slate-300 h-3 rounded-lg">
+                                <div class="bg-primary h-3 rounded-lg w-[90%]">
+
+                                </div>
+                            </div>
+                        </section>
+                    </aside>
+                    <!-- Aside 2 -->
+                    <aside>
+                        <!-- name Section -->
+                        <section class="flex justify-between text-sm mb-2">
+                            <span class="font-semibold">
+                                Budget Management
+                            </span>
+                            <span class="font-extrabold">
+                                87%
+                            </span>
+                        </section>
+                        <!-- Progress indiator section -->
+                        <section>
+                            <div class="bg-slate-300 h-3 rounded-lg">
+                                <div class="bg-primary h-3 rounded-lg w-[87%]">
+
+                                </div>
+                            </div>
+                        </section>
+                    </aside>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+
+
+
+    <!-- Team Image Section -->
+    <section class="min-h-96 bg-gradient-to-b from-white to-[#f6f3ee] lg:py-28">
+        <div class="max-w-6xl mx-auto">
+            <!-- Image Div -->
+            <div class="h-[30rem] bg-slate-400 rounded-xl bg-no-repeat bg-cover bg-center bg-[url('../images/team.jpg')]">
+                <div class="h-full w-full rounded-xl bg-gradient-to-b from-transparent via-transparent to-black flex flex-col md:flex-row gap-5 justify-end md:justify-between md:items-end px-5 py-7 text-white">
+                    <h1 class="text-4xl capitalize font-semibold max-w-md">
+                        driving growth through strategic maketing
+                    </h1>
+                    <div>
+                        <h3 class="text-2xl md:text-3xl font-semibold">
+                            12 Years
+                        </h3>
+                        <span class="font-medium text-sm md:text-base">
+                            In accounting services
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Div -->
+            <div>
+
+            </div>
+        </div>
     </section>
 
 </body>
