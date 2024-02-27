@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variable</title>
+</head>
+<body>
+    
+
+
+    <script>
+
+        // === Syntax of Switch ====
+        // switch(variable){
+        //     case posVal1:
+        //         statements;
+        //         break;
+
+        //     case posVal2:
+        //         statements;
+        //         break;
+        //     .
+        //     .
+        //     .
+        //     .
+        //     default : 
+        //         statements;
+        //         break;
+        // }
+
+        // ======= Example ==========
+        let userOption;
+
+        // userOption = prompt("Enter any number between 1 & 7");
+
+        // // NOTE: parseInt() is used to convert a string value to integer.
+        // switch(parseInt(userOption)){
+        //     case 1:
+        //         alert("Sunday");
+        //         break;
+        //     case 2:
+        //         alert("Monday");
+        //         break;
+        //     case 3:
+        //         alert("Tuesday");
+        //         break;
+        //     case 4:
+        //         alert("Wednessday");
+        //         break;
+        //     case 5:
+        //         alert("Thursday");
+        //         break;
+        //     case 6:
+        //         alert("Friday");
+        //         break;
+        //     case 7:
+        //         alert("Saturday");
+        //         break;
+        //     default:
+        //         alert("Invalid option entered");
+        //         break;
+        // }
+
+        userOption = parseInt(prompt("SELECT AN OPTION BELOW; \n1.\tCalculate Simple Interest \n2.\tSum 2 numbers \n3.\tCheck largest number"))
+
+        switch (userOption) {
+            case 1:
+                const rate = 5/100;
+                let p = prompt("Enter the principal amount");
+                let t = prompt("Enter the duration in months");
+
+                let SI = parseInt(p) * rate * parseInt(t);
+                alert("The simple interest is " + SI);
+                break;
+
+            case 2:
+                let num1 = parseInt(prompt("Enter the First Number"));
+                let num2 = parseInt(prompt("Enter the Second Number"));
+
+                let Sum = num1 + num2;
+                alert("The sum is " + Sum);
+                break;
+
+            case 3:
+                let firstNo = parseInt(prompt("Enter the First Number"));
+                let secondNo = parseInt(prompt("Enter the Second Number"));
+
+                if (firstNo > secondNo) {
+                    alert(firstNo + " is greater than " + secondNo);
+                } else if (secondNo > firstNo) {
+                    alert(secondNo + " is greater than " + firstNo);
+                } else {
+                    alert(secondNo + " is equal to " + firstNo);
+                }
+                break;
+        
+            default:
+                alert("Invalid Input");
+                break;
+        }
+
+
+        // =========== Syntax for If ===========
+        // if(condition){
+        //     statements;
+        // }
+
+        // if(condition){
+        //     statements;
+        // }else{
+        //     statements;
+        // }
+        
+        // if (condition) {
+        //     statements;
+        // } else if (condition) {
+        //     statements;
+        // } else if (condition) {
+        //     statements;
+        // } else {
+        //     statements;
+        // }
+
+        // ? - Conditional symbol
+        // (codition) ? statements if true : statements if false;
+
+        // Note: In some cases, you can exempt the block if the statement is just one line code
+        // EG:
+        // if(condition)
+        //     statement
+        // else
+        //     statement
+    </script>
+</body>
+</html>
