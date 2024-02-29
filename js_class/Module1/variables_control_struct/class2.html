@@ -14,24 +14,68 @@
         let yearOfBirth;
         let currentYear;
 
-        yearOfBirth = parseInt(prompt("Enter the year of birth"));
+        // yearOfBirth = parseInt(prompt("Enter the year of birth"));
 
         
-        //  * For us to get the current year, we need to instantiate (create) a new object of the date class.
-        //  * The statment below is an example of creating a new date object from the date class
-        let date = new Date();
-        currentYear = date.getFullYear();
+        // //  * For us to get the current year, we need to instantiate (create) a new object of the date class.
+        // //  * The statment below is an example of creating a new date object from the date class
+        // let date = new Date();
+        // currentYear = date.getFullYear();
 
-        age = currentYear - yearOfBirth;
-        // NOTE: when a variable is NAN (Not A Number), simply convert to number
-        if (age < 18) {
-            alert("You are not eligible to view this page.");
-            window.location.href = 'index.html'; // Rediret the user to index page
+        // age = currentYear - yearOfBirth;
+        // // NOTE: when a variable is NAN (Not A Number), simply convert to number
+        // if (age < 18) {
+        //     alert("You are not eligible to view this page.");
+        //     window.location.href = 'index.html'; // Rediret the user to index page
+        // }else{
+        //     alert("Congratulation. You are eligible to view this page");
+        // }
+
+        let question = "Choose an option from the list below;";
+        question = question + "\n1. \tConvert from Celsius to  Fahrenheit";
+        question += "\n2. \tConvert from Fahrenheit to Celsius \n3. \tConfirm A Leap Year";
+
+        // FORMULAR FOR CONVERSION
+        // °F = °C × (9/5) + 32
+        // °C = 5 / 9 (°F - 32)
+
+        let userOption = parseFloat(prompt(question));
+
+        if (userOption === 1) {
+            // Converting to Fahrenheit
+            let tempC = prompt("Enter the temperature in degree celsius");
+            let F = tempC * (9/5) + 32;
+            alert("The temperature in Fahrenheit is " + F);
+        }else if (userOption === 2) {
+            // Converting to Fahrenheit
+            let tempF = prompt("Enter the temperature in degree fahrenhet");
+            let C = 5 / 9 * (tempF - 32);
+            alert("The temperature in celsius is " + C);
+        }else if (userOption === 3) {
+            let year = parseInt(prompt("Enter the year yo want to check."));
+            if (year % 4 == 0) {
+                // Reconfirming that is not divisible by 100
+                // if (year % 100 != 0) {
+                //     alert(year + " is a leap year");
+                // }else{
+                //     if (year % 400 == 0) {
+                //         alert(year + " is a leap year");
+                //     } else {
+                //         alert(year + " is not a leap year");
+                //     }
+                // }
+                if (year % 100 == 0 && year % 400 !== 0) {
+                    alert(year + " is not a leap year");
+                }else{
+                    alert(year + " is a leap year");
+                }
+            }else{
+                alert(year + " is not a leap year");
+            }
         }else{
-            alert("Congratulation. You are eligible to view this page");
+            alert("Invalid Option Selected");
         }
 
-        let userOption = prompt("1. ")
 
 
         // =========== Syntax for If ===========
