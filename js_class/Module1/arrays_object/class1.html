@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array and Objects</title>
+</head>
+<body>
+    <script>
+        // let stuNames = [];
+
+        // stuNames[0] = "James";
+        // stuNames[1] = "John";
+        // stuNames[2] = "Goodness";
+        // stuNames[3] = "Udeme";
+        // stuNames[4] = "Josiah";
+        // stuNames[5] = "Happiness";
+
+        // let stuNames = ["James","John","Goodness","Udeme","Josiah","Happiness"];
+
+        // for(let i = 0; i < stuNames.length; i++){
+        //     console.log(stuNames[i]);
+        // }
+
+        // Write a program to accept the name 
+        // and age of six(6) students. Print 
+        // the name, age and eligibity status.
+        let students = [];
+        let age = [];
+        const noOfStu = 3;
+
+        for(let x=0; x < noOfStu; x++){
+            students[x] = prompt("Enter a name");
+            age[x] = parseInt(prompt('How old is he/she?'))
+        }
+
+
+        for(let y=0; y < noOfStu; y++){
+            let eligibleStatus;
+            if (age[y] >= 18) {
+                eligibleStatus = "eligible";
+            }else{
+                eligibleStatus = "not elible";
+            }
+            console.log(students[y] + " - " + age[y] + " - " + eligibleStatus);
+        }
+
+        // let student = {
+        //     name: {
+        //         firstname: "John",
+        //         lastname: "Udeme"
+        //     },
+        //     age: 34,
+        //     phone: ["09023242133", "0802333342423"],
+        //     married: true
+        // };
+
+        // console.log(student.phone[0]);
+
+
+    </script>
+</body>
+</html>
