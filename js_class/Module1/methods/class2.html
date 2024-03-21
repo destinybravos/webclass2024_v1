@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 2: Methods</title>
+    <style>
+        *{padding:0; margin: 0;}
+        .modal{
+            height: 100dvh;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            position: fixed;
+        }
+        #modal-dialog{
+            width: inherit;
+            height: inherit;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #modal-content{
+            padding: 10px 16px;
+            background-color: white;
+            width: 100%;
+            max-width: 360px;
+        }
+        #btnClose{
+            padding: 7px 15px;
+            border-radius: 10px;
+            border: none;
+            background-color: red;
+            color: white;
+        }
+        #modal-body{
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .hidden{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Simple Modal -->
+    <div class="modal hidden">
+        <div id="modal-dialog">
+            <section id="modal-content">
+                <aside id="modal-body"></aside>
+                <button id="btnClose" onclick="closeCustomAlert()">
+                    Close
+                </button>
+            </section>
+        </div>
+    </div>
+    
+    <script src="js/class2.js"></script>
+</body>
+</html>
