@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 2</title>
+    <style>
+        .btns{
+            padding: 5px 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="color-box" style="margin: 100px auto; background-color: #ccc; width: 150px; height: 150px;">
+
+    </div>
+
+    <section style="margin: 100px auto; display: flex; gap: 5px; justify-content: center;">
+        <button class="btns" onclick="changeColor('red')">RED</button>
+        <button class="btns" onclick="changeColor('blue')">BLUE</button>
+        <button class="btns" onclick="changeColor('TEAL')">TEAL</button>
+        <button class="btns" onclick="changeColor('tomaTo')">TOMATO</button>
+    </section>
+    
+    <script>
+        let changeColor = (color) => {
+            document.getElementById("color-box").style.backgroundColor = color.toLowerCase();
+        }
+    </script>
+</body>
+</html>
