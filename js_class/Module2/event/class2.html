@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="css/class2.css">
+    <script src="../../assets/js/moment.js"></script>
+</head>
+<body>
+    
+    <div id="app_container">
+        <div id="app_body">
+            <!-- Form Section -->
+            <section>
+                <h3>
+                    <u>Todo Form</u>
+                </h3>
+                <form name="todo_form">
+                    <div class="form-group">
+                        <label for="item">Item</label>
+                        <input type="text" class="form-input" id="item" name="item" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="priority">Priority</label>
+                        <select class="form-input" id="priority" name="priority">
+                            <option value="high">High</option>
+                            <option value="medium">Medium</option>
+                            <option value="normal">Normal</option>
+                            <option value="low">Low</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="duedate">Due Date</label>
+                        <input type="date" class="form-input" id="duedate" name="duedate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="duetime">Due time</label>
+                        <input type="time" class="form-input" id="duetime" name="duetime" required>
+                    </div>
+                    <div class="form-group">
+                        <button id="btnSave" type="submit">
+                            Save Todo
+                        </button>
+                    </div>
+                </form>
+            </section>
+    
+            <!-- Todo List  -->
+            <section>
+                <ul id="list"></ul>
+            </section>
+        </div>
+    </div>
+
+
+    <script src="js/class2.js"></script>
+</body>
+</html>

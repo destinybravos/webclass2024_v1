@@ -1,4 +1,4 @@
-#box1{
+#box1, #box2{
     margin: 100px auto;
     width: 100%;
     max-width: 360px;
@@ -6,6 +6,7 @@
     background-color: tomato;
     color: white;
 }
-#city-box{
+
+#city-box, #city-box2{
     padding: 10px 15px;
 }

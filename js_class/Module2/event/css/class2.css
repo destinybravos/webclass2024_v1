@@ -1,0 +1,90 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+body{
+    background-color: teal;
+}
+#app_container{
+    min-height: 100dvh;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+#app_body{
+    background-color: aliceblue;
+    min-height: 300px;
+    width: 100%;
+    max-width: 700px;
+    margin: auto;
+    display: flex;
+    box-shadow: 0 0 2px #0000002d;
+}
+#app_body section{
+    flex: 1;
+}
+
+#app_body section:first-child{
+    background-color: tomato;
+    color: white;
+    max-width: 35%;
+    padding: 10px 15px;
+    box-sizing: border-box;
+}
+
+/* Form Styles */
+.form-group{
+    margin-top: 14px;
+}
+.form-input{
+    height: 30px;
+    display: block;
+    width: 100%;
+    padding: 0 7px;
+    box-sizing: border-box;
+}
+#btnSave{
+    padding: 7px 10px;
+    background-color: teal;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+#list{
+    padding: 18px;
+    color: white;
+}
+
+.todo-list{
+    padding: 7px 18px;
+    background-color: blue;
+    min-height: 50px;
+    list-style-type: none;
+    border-radius: 16px;
+    margin-top: 8px;
+}
+.duedate_display{
+    background-color: #ffffff44;
+    padding: 4px 8px;
+    font-size: small;
+    display: inline-block;
+    border-radius: 5px;
+    margin-top: 4px;
+}
+
+li.high{
+    background-color: red !important;
+}
+li.medium{
+    background-color: orange !important;
+}
+li.normal{
+    background-color: green !important;
+}
+li.low{
+    background-color: lightblue !important;
+}

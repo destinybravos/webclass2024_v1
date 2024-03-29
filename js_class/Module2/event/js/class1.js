@@ -53,7 +53,25 @@ city_input.addEventListener('keyup', (event_info) => {
         let city = event_info.target.value;
         checkCity(city)
     }
+});
+
+
+// LIST PROGRAM
+let textbox = document.getElementById('item_input');
+let saveBtn = document.getElementById('btnSave');
+let itemList = document.getElementById('item_list');
+
+saveBtn.addEventListener('click', function(){
+    itemList.innerText += textbox.value + '\n';
+
+    // Reset the value ot the textbox
+    textbox.value = '';
 })
 
+// Reset Button and its event
+document.getElementById('btnReset').addEventListener('click', function(){
+    textbox.value = '';
+    itemList.innerText = '';
+})
 
 
