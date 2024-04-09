@@ -1,0 +1,79 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+body{
+    background-color: rgba(105, 90, 205, 0.356);
+}
+#page_body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+    width: 100%;
+}
+
+/* Calculator Styles */
+#calculator{
+    background-color: white;
+    border-radius: 10px;
+    min-height: 300px;
+    width: 100%;
+    max-width: 300px;
+    margin: auto;
+    padding: 10px 15px;
+    box-sizing: border-box;
+}
+#calculator header h1{
+    font-size: 1.1rem;
+}
+#screen{
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto;
+}
+#temp_display{
+    padding: 5px;
+    min-height: 10px;
+    text-align: right;
+    color: #000000a1;
+    height: 20px;
+}
+#main_display{
+    min-height: 30px;
+    padding: 5px;
+    text-align: right;
+    font-size: 3rem;
+    font-weight: bold;
+    height: 50px;
+    overflow: auto;
+}
+#mem_btns{
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+}
+#mem_btns button{
+    flex: 1;
+    padding: 5px;
+    background-color: transparent;
+    border: none;
+    color: rgb(104, 104, 104);
+    cursor: pointer;
+}
+
+#arth_btns{
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 5px;
+}
+
+#arth_btns button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    padding: 7px;
+}
