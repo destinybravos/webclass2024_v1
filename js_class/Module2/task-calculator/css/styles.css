@@ -34,20 +34,21 @@ body{
     margin: 10px auto;
 }
 #temp_display{
-    padding: 5px;
-    min-height: 10px;
+    padding: 2px 5px 0;
+    min-height: 8px;
     text-align: right;
     color: #000000a1;
     height: 20px;
 }
 #main_display{
     min-height: 30px;
-    padding: 5px;
+    padding: 2px 5px 5px;
     text-align: right;
     font-size: 3rem;
     font-weight: bold;
     height: 50px;
-    overflow: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 #mem_btns{
     display: flex;
