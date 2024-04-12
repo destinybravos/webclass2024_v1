@@ -60,7 +60,8 @@ body{
     padding: 5px;
     background-color: transparent;
     border: none;
-    color: rgb(104, 104, 104);
+    /* color: rgb(104, 104, 104); */
+    color: rgb(26, 25, 25);
     cursor: pointer;
 }
 
