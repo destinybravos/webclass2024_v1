@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Previewer</title>
+    <link rel="shortcut icon" href="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_2x_r5.png" type="image/x-icon"> 
+
+    <style>
+        .images{
+            background-color: aquamarine;
+        }
+
+        #gallery{
+            display: grid;
+            grid-template-columns: auto auto auto;
+            gap: 10px;
+        }
+
+        #gallery li{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            line-height: normal;
+        }
+        #gallery li img{
+            max-width: 150px;
+        }
+        #gallery li h4{
+            margin: 4px auto;
+        }
+    </style>
+</head>
+<body>
+
+    <form name="frmImg" enctype="multipart/form-data">
+        <section style="display: flex; flex-direction: column; gap: 15px;">
+            <div>
+                <!-- <input type="file" name="images" accept="image/*" multiple> -->
+                <input type="file" name="images" accept="image/*" required>
+            </div>
+            <div>
+                <input type="text" name="stu_name" id="stu_name" placeholder="student name" required>
+            </div>
+    
+            <div>
+                <button>
+                    Save
+                </button>
+            </div>
+        </section>
+    </form>
+
+
+    <!-- Gallery Section -->
+    <ul id="gallery"></ul>
+    
+    <script src="script.js"></script>
+</body>
+</html>
