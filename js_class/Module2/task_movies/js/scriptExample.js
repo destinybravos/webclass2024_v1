@@ -12,11 +12,15 @@ let imgSize = {
 fetch('database/movies.json')
 .then((res) => res.json())
 .then((movies) => {
-    movies.forEach((movie_data) => {
-        if (movie_data.movie_id == movieId) {
-            movie = movie_data;
-        }
-    });
+    // movies.forEach((movie_data) => {
+    //     if (movie_data.movie_id == movieId) {
+    //         movie = movie_data;
+    //     }
+    // });
+
+    movie = movies.find((movie_data) => {
+        return movie_data.movie_id == movieId
+    })
 })
 
 
