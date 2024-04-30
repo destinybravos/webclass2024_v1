@@ -1,7 +1,7 @@
 // Needed Variable
 let imgBaseUrl = 'https://image.tmdb.org/t/p/'
 let imgSize = {
-    normal: 'origanal',
+    normal: 'original',
     small: 'w500'
 }
 
@@ -16,16 +16,21 @@ fetch('database/movies.json')
 let loadMovies = (movieList) => {
     let cards = '';
     movieList.forEach((movie) => {
-        cards += `<div>
-                        <a href="movie_detail.html?id=${movie.movie_id}" class="posters">
+        cards += `<a href="movie_detail.html?id=${movie.movie_id}" class="posters">
+                        <div class="image_container">
                             <img src="${imgBaseUrl + imgSize.small}/${movie.poster_path}" alt="">
-                        </a>
-                        <p>${movie.title}</p>
-                    </div>
-                `
+                        </div>
+                        <h3>
+                            ${movie.title}
+                        </h3>
+                        <p>
+                            ${movie.Director}
+                        </p>
+                        <span>Released: ${movie.release_date}</span>
+                    </a>`;
     });
 
-    document.getElementById('images').innerHTML = cards;
+    document.getElementById('content-grid').innerHTML = cards;
 }
 
 
