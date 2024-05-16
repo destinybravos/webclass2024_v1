@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Project</title>
+    <link rel="stylesheet" href="public/app.css">
+    <link rel="stylesheet" href="../../../fa_icons/css/all.css">
+</head>
+<body>
+    <h1 class="bg-teal-500">
+        Users
+    </h1>
+
+    <div class="grid grid-cols-3 md:grid-cols-5 gap-5 my-8 max-w-6xl mx-auto" id="people">
+        <div class="">
+            <i class="fa fa-circle-notch fa-4x fa-spin"></i>
+        </div>
+    </div>
+
+    <hr>
+    <h2 class="text-2xl">
+        Form Sample
+    </h2>
+
+    <form name="frmLogin" id="frmLogin" class="mx-auto max-w-sm" method="post">
+        <div class="">
+            <input type="text" name="uname" id="uname" class="border border-slate-500 rounded-md outline-none ring-0 px-2 py-1">
+        </div>
+        <div class="mt-4">
+            <input type="password" name="pass" id="pass" class="border border-slate-500 rounded-md outline-none ring-0 px-2 py-1">
+        </div>
+        <div class="mt-4">
+            <button class="py-1 px-3 bg-slate-800 text-white rounded-lg">
+                Login
+            </button>
+        </div>
+    </form>
+    
+
+
+    <script>
+        // JSON.stringify()
+        // JSON.parse()
+        // fetch(url, options)
+
+        fetch('./api/users/fetch_all.php')
+        .then((res) => res.json())
+        .then((data) => {
+            showData(data);
+        })
+
+        let showData = (data) => {
+            let list = '';
+
+            data.forEach((info, index) => {
+                list += `<div class="border border-black py-2 px-4">
+                            <h1>${info.firstname} ${info.lastname}</h1>
+                            <h3>${info.phone}</h3>
+                            <span>${info.email}</span>
+                        </div>`;
+            });
+
+            document.getElementById('people').innerHTML = list;
+        }
+
+
+        document.forms['frmLogin'].addEventListener('submit', (ev) => {
+            ev.preventDefault();
+            let username = document.forms['frmLogin']['uname'].value;
+            let password = document.forms['frmLogin']['pass'].value;
+
+            // Submitting the data as JSON Formatted String
+            // let formData = JSON.stringify({
+            //     username,
+            //     password
+            // })
+            
+            // Using Get Method 
+            // fetch(`./api/users/store.php?username=${username}&password=${password}`)
+
+            // Create a JavaScript FormData object
+            let formData = new FormData();
+                formData.append('username', username);
+                formData.append('password', password);
+
+            // Using the Post Methods
+            fetch(`./api/users/store.php`, {
+                method: "POST",
+                body: formData,
+                headers: {
+                    "Accept" : "application/json"
+                }
+            })
+            .then((res) => res.text())
+            .then((data) => {
+                console.log(data);
+            })
+        })
+    </script>
+</body>
+</html>

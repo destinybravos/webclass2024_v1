@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing Forms</title>
+</head>
+<body>
+
+    <form action="https://jsonplaceholder.typicode.com/users" method="post">
+        <div>
+            <input type="text" name="username" id="username" placeholder="Enter Username">
+        </div>
+        <div>
+            <input type="password" name="password" id="password" placeholder="Enter password">
+        </div>
+        <div>
+            <input type="checkbox" name="remember" id="remember"> Remember Me
+        </div>
+        <div>
+            <button type="submit">
+                Submit
+            </button>
+        </div>
+    </form>
+
+
+    <script>
+        fetch('https://jsonplaceholder.typicode.com/users')
+        .then((response) => response.json())
+        .then((data) => {
+            console.log(data);
+        })
+
+        // const xhr = new XMLHttpRequest();
+        // xhr.onload = function() {
+        //     console.log(JSON.parse(this.response));
+        // }
+        // xhr.open('GET', 'https://jsonplaceholder.typicode.com/users');
+        // xhr.send();
+    </script>
+    
+</body>
+</html>
