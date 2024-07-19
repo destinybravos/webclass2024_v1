@@ -7,28 +7,89 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-slate-100">
-    <h2 class="mb-10">
-        Test Application
-    </h2>
-
-    <div>
-        <section class="max-w-md mx-auto mb-5">
-            <form id="form_search">
-                <div class="flex items-center">
-                    <input type="search" name="search-input" id="search-input" class="flex-grow w-full outline-none py-1 px-2 rounded-l-lg">
-                    <button class="py-1 px-3 bg-teal-500 text-white rounded-r-lg" >
-                        Search
-                    </button>
+        
+    <div class="flex gap-3 items-start justify-between my-5 mx-6 p-1">
+        <section class="flex-grow w-1/2">
+            <form id="form_save_user" method="post">
+                <div class="flex flex-col justify-center items-center py-2 px-4 bg-teal-500 gap-4 max-w-xl mx-auto mt-10 rounded-md">
+                    <h2 class="text-2xl my-4 font-bold font-monospace mb-4">Registration Form</h2>
+                    <section class="grid grid-cols-1 grid-cols-2 gap-3 w-full">
+                        <div>
+                            <label for="" class="text-lg text-white">First Name</label> <br>
+                            <input type="text" id="first_name" name="firstname" required class="w-full h-8 rounded-md outline-none px-2 py-1">
+                        </div>
+                        <div>
+                            <label for="" class="text-lg text-white">Last Name</label> <br>
+                            <input type="text" id="last_name" name="lastname" required class="w-full h-8 rounded-md outline-none px-2 py-1">
+                        </div>
+                        <div class="relative">
+                            <label for="" class="text-lg text-white">Email Address</label> <br>
+                            <input type="email" id="email" name="email" required class="w-full h-8 rounded-md outline-none px-2 py-1">
+                            <span class="absolute text-red-600 text-xs left-0 -bottom-4 font-semibold" id="email_error"></span>
+                        </div>
+                        <div>
+                            <label for="" class="text-lg text-white">Phone Number</label> <br>
+                            <input type="tel" id="phone" name="phone" required class="w-full h-8 rounded-md outline-none px-2 py-1">
+                        </div>
+                        <div class="relative">
+                            <label for="" class="text-lg text-white">Password</label> <br>
+                            <input type="password" id="password" name="password" required class="w-full h-8 rounded-md outline-none px-2 py-1">
+                            <span class="absolute text-red-600 text-xs left-0 -bottom-4 font-semibold" id="pass_error"></span>
+                        </div>
+                        <div class="relative">
+                            <label for="" class="text-lg text-white">Confirm Password</label> <br>
+                            <input type="password" id="confirm_password" name="confirm_password" required class="w-full h-8 rounded-md outline-none px-2 py-1">
+                            <span class="absolute text-red-600 text-xs left-0 -bottom-4 font-semibold" id="cpass_error"></span>
+                        </div>
+                        <div>
+                            <label for="" class="text-lg text-white">Gender</label> <br>
+                            <select name="gender" id="gender" class="w-full h-8 rounded-md outline-none px-2 py-1">
+                                <option value="">Select your Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="" class="text-lg text-white">Date of Birth</label> <br>
+                            <input type="date" id="dob" name="dob" class="w-full h-8 rounded-md outline-none px-2 py-1">
+                        </div>
+                        <div class="row-span-2 col-span-2">
+                            <label for="" class="text-lg text-white">Bio</label> <br>
+                            <textarea type="text" id="bio" name="bio" class="w-full max-h-full rounded-md outline-none px-2 py-1"></textarea>
+                        </div>
+                        <div>
+                            <button class="py-1 px-3 bg-white rounded-lg shadow-md">
+                                Submit
+                            </button>
+                        </div>
+                    </section>
                 </div>
-            </form>
+            </form>  
+        </section>
+
+        <section class="flex-grow">
+            <div>
+                <section class="max-w-md mx-auto mb-5">
+                    <form id="form_search">
+                        <div class="flex items-center">
+                            <input type="search" name="search-input" id="search-input" class="flex-grow w-full outline-none py-1 px-2 rounded-l-lg">
+                            <button class="py-1 px-3 bg-teal-500 text-white rounded-r-lg" >
+                                Search
+                            </button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        
+            <section class="px-4">
+                <div id="user_cards" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 mx-auto max-w-6xl">
+                
+                </div>
+            </section>
         </section>
     </div>
 
-    <section class="px-4">
-        <div id="user_cards" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mx-auto max-w-6xl">
-        
-        </div>
-    </section>
+    
 
 
 
@@ -113,6 +174,100 @@
             .catch(error => console.log('error', error));
         }
         fetchUsers();
+
+        // Form Custom Validation
+        document.getElementById('password').addEventListener('keyup', (ev) => {
+            let password = ev.target.value;
+
+            if (password.length < 6 || checkCharacter(password) == false) {
+                document.getElementById('pass_error').innerText = 'the password is week';
+            }else{
+                document.getElementById('pass_error').innerText = '';
+            }
+        })
+
+        let checkCharacter = (word) => {
+            let hasNumber = false;
+            let hasWords = false;
+
+            let size = word.length;
+
+            for (let i = 0; i < size - 1; i++) {
+                if (isNaN(word[i].valueOf())) {
+                    hasWords = true;
+                }else{
+                    hasNumber = true;
+                }
+            }
+
+            return (hasNumber && hasWords);
+        }
+
+        document.getElementById('confirm_password').addEventListener('keyup', (ev) => {
+            let password = document.getElementById('password').value;
+            let confirm_password = ev.target.value;
+
+            if (password != confirm_password) {
+                document.getElementById('cpass_error').innerText = 'Password Mismatch';
+            }else{
+                document.getElementById('cpass_error').innerText = '';
+            }
+        })
+
+        // Email Validation
+        document.getElementById('email').addEventListener('keyup', (ev) => {
+            let emailVal = ev.target.value;
+            validateEmail(emailVal);
+        })
+
+        document.getElementById('email').addEventListener('blur', (ev) => {
+            let emailVal = ev.target.value;
+            validateEmail(emailVal);
+        })
+
+        let validateEmail = (emailVal) => {
+            let formdata = new FormData();
+            formdata.append('email', emailVal)
+
+            let httpOptions = {
+                method: "POST",
+                body: formdata,
+                header: {  }
+            }
+
+            fetch(`http://localhost/webclass2024_v1/backend/testapp/db/validate_email.php`, httpOptions)
+            .then((response) => response.json())
+            .then((data) => {
+                if (data.success == false) {
+                    document.getElementById('email_error').innerText = 'User with that email already exists!';
+                }else{
+                    document.getElementById('email_error').innerText = '';
+                }
+            })
+        } 
+
+        document.getElementById('form_save_user').addEventListener('submit', (ev) => {
+            ev.preventDefault();
+            let formdata = new FormData(ev.target);
+
+            let httpOptions = {
+                method: "POST",
+                body: formdata,
+                header: {  }
+            }
+
+            fetch(`http://localhost/webclass2024_v1/backend/testapp/db/insert.php`, httpOptions)
+            .then((response) => response.json())
+            .then((data) => {
+                if (data.success == true) {
+                    alert(data.message)
+                    ev.target.reset();
+                    fetchUsers();
+                }else{
+                    alert(data.message)
+                }
+            })
+        })
     </script>
 </body>
 </html>

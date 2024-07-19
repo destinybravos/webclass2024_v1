@@ -4,7 +4,7 @@
     $response = array();
 
     // $fetchQuery = $conn->query("SELECT id, firstname, lastname, email as email_address FROM users");
-    $fetchQuery = $conn->query("SELECT * FROM users");
+    $fetchQuery = $conn->query("SELECT * FROM users ORDER BY firstname, lastname");
       
     $users = array();
     
