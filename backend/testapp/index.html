@@ -11,13 +11,76 @@
         Test Application
     </h2>
 
-    <div id="user_cards" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mx-auto max-w-6xl">
-        
+    <div>
+        <section class="max-w-md mx-auto mb-5">
+            <form id="form_search">
+                <div class="flex items-center">
+                    <input type="search" name="search-input" id="search-input" class="flex-grow w-full outline-none py-1 px-2 rounded-l-lg">
+                    <button class="py-1 px-3 bg-teal-500 text-white rounded-r-lg" >
+                        Search
+                    </button>
+                </div>
+            </form>
+        </section>
     </div>
+
+    <section class="px-4">
+        <div id="user_cards" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mx-auto max-w-6xl">
+        
+        </div>
+    </section>
 
 
 
     <script>
+
+        let displayUsers = (users) => {
+            let usersHTML = '';
+                if (users.length > 0) {
+                    users.forEach((user) => {
+                        usersHTML += `<section class="bg-white shadow-lg min-h-16 py-2 px-3 rounded-lg text-center even:bg-red-50 odd:bg-teal-50 relative">
+                                    <div class="mb-4 mx-auto w-24 h-24 rounded-full bg-teal-200"></div>
+                                    <h2 class="text-xl font-bold">
+                                        ${user.firstname} ${user.lastname}
+                                    </h2>
+                                    <span>${user.email}</span>
+                                    <button onclick="deleteUser(${user.id})" class="py-1 px-2 text-xs right-2 top-3 absolute bg-red-500 text-white rounded-md">
+                                        Delete
+                                    </button>
+                                </section>`;
+                    });
+                }else{
+                    usersHTML += `<section class="bg-white shadow-lg min-h-16 py-2 px-3 rounded-lg text-center even:bg-red-50 odd:bg-teal-50 relative">
+                                    No user found for the search
+                                </section>`
+                }
+
+                document.getElementById('user_cards').innerHTML = usersHTML;
+        }
+
+        let searchUser = (searchVal) => {
+            // fetch("http://localhost/webclass2024_v1/backend/testapp/db/search.php?search_param=" + searchVal)
+            fetch(`http://localhost/webclass2024_v1/backend/testapp/db/search.php?search_param=${searchVal}`)
+            .then(response => response.json())
+            .then(result => {
+                if (result.success == true) {
+                    displayUsers(result.users)
+                }
+            })
+            .catch(error => console.log('error', error));
+        }
+
+        document.getElementById('form_search').addEventListener('submit', (ev) => {
+            ev.preventDefault();
+            let searchVal = document.getElementById('search-input').value;
+            searchUser(searchVal);
+        })
+
+        document.getElementById('search-input').addEventListener('keyup', (ev) => {
+            let searchVal = ev.target.value;
+            searchUser(searchVal);
+        })
+
         function fetchUsers() {
             var requestOptions = {
                 method: 'GET',
