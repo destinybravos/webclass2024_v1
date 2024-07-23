@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test App</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="shimmer.css">
 </head>
 <body class="bg-slate-100">
         
@@ -83,7 +84,36 @@
         
             <section class="px-4">
                 <div id="user_cards" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 mx-auto max-w-6xl">
-                
+                    <section class="bg-white shadow-lg min-h-16 py-2 px-3 rounded-lg text-center even:bg-red-50 odd:bg-teal-50 relative">
+                        <div class="mb-4 mx-auto w-24 h-24 rounded-full bg-slate-200 shimmer"></div>
+                        <h2 class="text-xl font-bold w-40 h-4 bg-slate-200 rounded-lg shimmer">
+                            
+                        </h2>
+                        <span class="h-2 bg-slate-200 rounded-lg block mt-2 shimmer"></span>
+                        <button onclick="" class="shimmer  px-2 text-xs right-2 top-3 absolute bg-slate-200 rounded-lg text-white rounded-md h-4 w-6">
+                            
+                        </button>
+                    </section>
+                    <section class="bg-white shadow-lg min-h-16 py-2 px-3 rounded-lg text-center even:bg-red-50 odd:bg-teal-50 relative">
+                        <div class="mb-4 mx-auto w-24 h-24 rounded-full bg-slate-200 shimmer"></div>
+                        <h2 class="text-xl font-bold w-40 h-4 bg-slate-200 rounded-lg shimmer">
+                            
+                        </h2>
+                        <span class="h-2 bg-slate-200 rounded-lg block mt-2 shimmer"></span>
+                        <button onclick="" class="shimmer  px-2 text-xs right-2 top-3 absolute bg-slate-200 rounded-lg text-white rounded-md h-4 w-6">
+                            
+                        </button>
+                    </section>
+                    <section class="bg-white shadow-lg min-h-16 py-2 px-3 rounded-lg text-center even:bg-red-50 odd:bg-teal-50 relative">
+                        <div class="mb-4 mx-auto w-24 h-24 rounded-full bg-slate-200 shimmer"></div>
+                        <h2 class="text-xl font-bold w-40 h-4 bg-slate-200 rounded-lg shimmer">
+                            
+                        </h2>
+                        <span class="h-2 bg-slate-200 rounded-lg block mt-2 shimmer"></span>
+                        <button onclick="" class="shimmer  px-2 text-xs right-2 top-3 absolute bg-slate-200 rounded-lg text-white rounded-md h-4 w-6">
+                            
+                        </button>
+                    </section>
                 </div>
             </section>
         </section>
@@ -94,7 +124,6 @@
 
 
     <script>
-
         let displayUsers = (users) => {
             let usersHTML = '';
                 if (users.length > 0) {
@@ -173,7 +202,9 @@
             })
             .catch(error => console.log('error', error));
         }
-        fetchUsers();
+        setTimeout(() => {
+            fetchUsers();
+        }, 3000);
 
         // Form Custom Validation
         document.getElementById('password').addEventListener('keyup', (ev) => {

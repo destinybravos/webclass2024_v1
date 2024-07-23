@@ -1,0 +1,32 @@
+.shimmer{
+    background: linear-gradient(-45deg, transparent, white, transparent);
+    background: -webkit-linear-gradient(-45deg, transparent, white, transparent);
+    background-size: 500%;
+    animation: 2s infinite shimmer-loding;
+}
+
+@keyframes shimmer-loding {
+    from {
+        background-position: bottom right;
+    }
+    to {
+        background-position: top left;
+    }
+}
+
+@keyframes rotateContent {
+    from {
+        rotate: 0deg;
+    }
+    to {
+        rotate: 360deg;
+    }
+}
+@keyframes -webkit-rotateContent {
+    from {
+        rotate: 0deg;
+    }
+    to {
+        rotate: 360deg;
+    }
+}
